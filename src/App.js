@@ -35,11 +35,11 @@ function App() {
             <Route path="/jobs/:id" element={<JobDetail />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/admin/login" element={<AdminLogin />} />
-            <Route path="/admin" element={<AdminDashboard />} />
-            <Route path="/admin/jobs" element={<JobListAdmin />} />
-            <Route path="/admin/jobs/new" element={<JobForm />} />
-            <Route path="/admin/jobs/edit/:id" element={<JobForm />} />
+            <Route path="/admin/login" element={ <AdminLogin />} />
+            <Route path="/admin" element={<PrivateRoute ><AdminDashboard /></PrivateRoute>} />
+            <Route path="/admin/jobs" element={<PrivateRoute ><JobListAdmin /></PrivateRoute>} />
+            <Route path="/admin/jobs/new" element={<PrivateRoute ><JobForm /></PrivateRoute>} />
+            <Route path="/admin/jobs/edit/:id" element={<PrivateRoute ><JobForm /></PrivateRoute>} />
             <Route path="/admin/contact-queries" element={<ContactQueries />} />
           </Routes>
         </main>
